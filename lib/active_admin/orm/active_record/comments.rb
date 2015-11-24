@@ -65,7 +65,7 @@ ActiveAdmin.after_load do |app|
 
       # Set up permitted params in case the app is using Strong Parameters
       unless Rails::VERSION::MAJOR == 3 && !defined? StrongParameters
-        permit_params :body, :namespace, :resource_id, :resource_type
+        permit_params :body, :namespace, :resource_id, :resource_type, :attachments_attributes => [:id, :file, :attachable_id, :attachable_type]
       end
 
       index do
